@@ -1,0 +1,45 @@
+#include <noita/components/SpriteParticleEmitterComponent.h>
+
+void noita::components::SpriteParticleEmitterComponent::parse(binary_io::any_istream &in, noita::components::SpriteParticleEmitterComponent &out) {
+    priv::read_integral(in, out.sprite_file);
+    priv::read_integral(in, out.sprite_centered);
+    priv::read_integral(in, out.sprite_random_rotation);
+    priv::read_integral(in, out.render_back);
+    priv::read_integral(in, out.delay);
+    priv::read_integral(in, out.lifetime);
+    types::Color<float>::parse(in, out.color);
+    types::Color<float>::parse(in, out.color_change);
+    priv::read_integral(in, out.additive);
+    priv::read_integral(in, out.emissive);
+    types::vec2<float>::parse(in, out.velocity);
+    types::vec2<float>::parse(in, out.gravity);
+    priv::read_integral(in, out.velocity_slowdown);
+    priv::read_integral(in, out.rotation);
+    priv::read_integral(in, out.angular_velocity);
+    priv::read_integral(in, out.use_velocity_as_rotation);
+    priv::read_integral(in, out.use_rotation_from_velocity_component);
+    priv::read_integral(in, out.use_rotation_from_entity);
+    priv::read_integral(in, out.entity_velocity_multiplier);
+    types::vec2<float>::parse(in, out.scale);
+    types::vec2<float>::parse(in, out.scale_velocity);
+    priv::read_integral(in, out.z_index);
+    types::ValueRange<float>::parse(in, out.randomize_lifetime);
+    types::AABB::parse(in, out.randomize_position);
+    priv::read_integral(in, out.randomize_position_inside_hitbox);
+    types::AABB::parse(in, out.randomize_velocity);
+    types::AABB::parse(in, out.randomize_scale);
+    types::ValueRange<float>::parse(in, out.randomize_rotation);
+    types::ValueRange<float>::parse(in, out.randomize_angular_velocity);
+    types::ValueRange<float>::parse(in, out.randomize_alpha);
+    types::ValueRange<float>::parse(in, out.randomize_animation_speed_coeff);
+    priv::read_integral(in, out.velocity_always_away_from_center);
+    types::vec2<float>::parse(in, out.expand_randomize_position);
+    priv::read_integral(in, out.camera_bound);
+    priv::read_integral(in, out.camera_distance);
+    priv::read_integral(in, out.is_emitting);
+    priv::read_integral(in, out.count_min);
+    priv::read_integral(in, out.count_max);
+    priv::read_integral(in, out.emission_interval_min_frames);
+    priv::read_integral(in, out.emission_interval_max_frames);
+    priv::read_integral(in, out.entity_file);
+}

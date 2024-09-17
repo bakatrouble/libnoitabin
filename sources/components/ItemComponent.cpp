@@ -1,0 +1,42 @@
+#include <noita/components/ItemComponent.h>
+
+void noita::components::ItemComponent::parse(binary_io::any_istream &in, noita::components::ItemComponent &out) {
+    priv::read_integral(in, out.item_name);
+    priv::read_integral(in, out.is_stackable);
+    priv::read_integral(in, out.is_consumable);
+    priv::read_integral(in, out.stats_count_as_item_pick_up);
+    priv::read_integral(in, out.auto_pickup);
+    priv::read_integral(in, out.permanently_attached);
+    priv::read_integral(in, out.uses_remaining);
+    priv::read_integral(in, out.is_identified);
+    priv::read_integral(in, out.is_frozen);
+    priv::read_integral(in, out.collect_nondefault_actions);
+    priv::read_integral(in, out.remove_on_death);
+    priv::read_integral(in, out.remove_on_death_if_empty);
+    priv::read_integral(in, out.remove_default_child_actions_on_death);
+    priv::read_integral(in, out.play_hover_animation);
+    priv::read_integral(in, out.play_spinning_animation);
+    priv::read_integral(in, out.is_equipable_forced);
+    priv::read_integral(in, out.play_pick_sound);
+    priv::read_integral(in, out.drinkable);
+    types::vec2<float>::parse(in, out.spawn_pos);
+    priv::read_integral(in, out.max_child_items);
+    priv::read_integral(in, out.ui_sprite);
+    priv::read_integral(in, out.ui_description);
+    priv::read_integral(in, out.preferred_inventory);
+    priv::read_integral(in, out.enable_orb_hacks);
+    priv::read_integral(in, out.is_all_spells_book);
+    priv::read_integral(in, out.always_use_item_name_in_ui);
+    priv::read_integral(in, out.custom_pickup_string);
+    priv::read_integral(in, out.ui_display_description_on_pick_up_hint);
+    types::vec2<int32_t>::parse(in, out.inventory_slot);
+    priv::read_integral(in, out.next_frame_pickable);
+    priv::read_integral(in, out.npc_next_frame_pickable);
+    priv::read_integral(in, out.is_pickable);
+    priv::read_integral(in, out.is_hittable_always);
+    priv::read_integral(in, out.item_pickup_radius);
+    priv::read_integral(in, out.camera_max_distance);
+    priv::read_integral(in, out.camera_smooth_speed_multiplier);
+    priv::read_integral(in, out.has_been_picked_by_player);
+    priv::read_integral(in, out.mFramePickedUp);
+}

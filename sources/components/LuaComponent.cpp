@@ -1,0 +1,43 @@
+#include <noita/components/LuaComponent.h>
+
+void noita::components::LuaComponent::parse(binary_io::any_istream &in, noita::components::LuaComponent &out) {
+    priv::read_integral(in, out.script_source_file);
+    priv::read_integral(in, out.vm_type);
+    priv::read_integral(in, out.execute_on_added);
+    priv::read_integral(in, out.execute_on_removed);
+    priv::read_integral(in, out.execute_every_n_frame);
+    priv::read_integral(in, out.execute_times);
+    priv::read_integral(in, out.limit_how_many_times_per_frame);
+    priv::read_integral(in, out.limit_to_every_n_frame);
+    priv::read_integral(in, out.limit_all_callbacks);
+    priv::read_integral(in, out.remove_after_executed);
+    priv::read_integral(in, out.enable_coroutines);
+    priv::read_integral(in, out.call_init_function);
+    priv::read_integral(in, out.script_enabled_changed);
+    priv::read_integral(in, out.script_damage_received);
+    priv::read_integral(in, out.script_damage_about_to_be_received);
+    priv::read_integral(in, out.script_item_picked_up);
+    priv::read_integral(in, out.script_shot);
+    priv::read_integral(in, out.script_collision_trigger_hit);
+    priv::read_integral(in, out.script_collision_trigger_timer_finished);
+    priv::read_integral(in, out.script_physics_body_modified);
+    priv::read_integral(in, out.script_pressure_plate_change);
+    priv::read_integral(in, out.script_inhaled_material);
+    priv::read_integral(in, out.script_death);
+    priv::read_integral(in, out.script_throw_item);
+    priv::read_integral(in, out.script_material_area_checker_failed);
+    priv::read_integral(in, out.script_material_area_checker_success);
+    priv::read_integral(in, out.script_electricity_receiver_switched);
+    priv::read_integral(in, out.script_electricity_receiver_electrified);
+    priv::read_integral(in, out.script_kick);
+    priv::read_integral(in, out.script_interacting);
+    priv::read_integral(in, out.script_audio_event_dead);
+    priv::read_integral(in, out.script_wand_fired);
+    priv::read_integral(in, out.script_teleported);
+    priv::read_integral(in, out.script_portal_teleport_used);
+    priv::read_integral(in, out.script_polymorphing_to);
+    priv::read_integral(in, out.script_biome_entered);
+    priv::read_integral(in, out.mLastExecutionFrame);
+    priv::read_integral(in, out.mTimesExecutedThisFrame);
+    priv::read_integral(in, out.mModAppendsDone);
+}

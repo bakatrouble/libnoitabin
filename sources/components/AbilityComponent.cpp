@@ -1,0 +1,50 @@
+#include <noita/components/AbilityComponent.h>
+
+void noita::components::AbilityComponent::parse(binary_io::any_istream &in, noita::components::AbilityComponent &out) {
+    priv::read_integral(in, out.cooldown_frames);
+    priv::read_integral(in, out.entity_file);
+    priv::read_integral(in, out.sprite_file);
+    priv::read_integral(in, out.entity_count);
+    priv::read_integral(in, out.never_reload);
+    priv::read_integral(in, out.reload_time_frames);
+    priv::read_integral(in, out.mana);
+    priv::read_integral(in, out.mana_max);
+    priv::read_integral(in, out.mana_charge_speed);
+    priv::read_integral(in, out.rotate_in_hand);
+    priv::read_integral(in, out.rotate_in_hand_amount);
+    priv::read_integral(in, out.rotate_hand_amount);
+    priv::read_integral(in, out.fast_projectile);
+    priv::read_integral(in, out.swim_propel_amount);
+    priv::read_integral(in, out.max_charged_actions);
+    priv::read_integral(in, out.charge_wait_frames);
+    priv::read_integral(in, out.item_recoil_recovery_speed);
+    priv::read_integral(in, out.item_recoil_max);
+    priv::read_integral(in, out.item_recoil_offset_coeff);
+    priv::read_integral(in, out.item_recoil_rotation_coeff);
+    priv::read_integral(in, out.base_item_file);
+    priv::read_integral(in, out.use_entity_file_as_projectile_info_proxy);
+    priv::read_integral(in, out.click_to_use);
+    priv::read_integral(in, out.stat_times_player_has_shot);
+    priv::read_integral(in, out.stat_times_player_has_edited);
+    priv::read_integral(in, out.shooting_reduces_amount_in_inventory);
+    priv::read_integral(in, out.throw_as_item);
+    priv::read_integral(in, out.simulate_throw_as_item);
+    priv::read_integral(in, out.max_amount_in_inventory);
+    priv::read_integral(in, out.amount_in_inventory);
+    priv::read_integral(in, out.drop_as_item_on_death);
+    priv::read_integral(in, out.ui_name);
+    priv::read_integral(in, out.use_gun_script);
+    priv::read_integral(in, out.is_petris_gun);
+    types::ConfigGun::parse(in, out.gun_config);
+    types::ConfigGunActionInfo::parse(in, out.gunaction_config);
+    priv::read_integral(in, out.gun_level);
+    priv::read_integral(in, out.add_these_child_actions);
+    priv::read_integral(in, out.current_slot_durability);
+    priv::read_integral(in, out.slot_consumption_function);
+    priv::read_integral(in, out.mNextFrameUsable);
+    priv::read_integral(in, out.mCastDelayStartFrame);
+    priv::read_integral(in, out.mReloadFramesLeft);
+    priv::read_integral(in, out.mReloadNextFrameUsable);
+    priv::read_integral(in, out.mChargeCount);
+    priv::read_integral(in, out.mIsInitialized);
+}
